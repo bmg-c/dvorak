@@ -16,13 +16,6 @@ clean:
 	-rm -f *.o
 	-rm -f $(TARGET)
 
-install:
-	cp dvorak /usr/local/bin/
-	cp 80-dvorak.rules /etc/udev/rules.d/
-	cp dvorak@.service /etc/systemd/system/
-	udevadm control --reload
-	systemctl restart systemd-udevd.service
-	systemctl daemon-reload
 
 uninstall:
 	rm /usr/local/bin/dvorak
